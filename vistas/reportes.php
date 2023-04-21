@@ -1,15 +1,29 @@
 <!-- incluimos el archivo header que contiene el navar -->
-<?php include "header.php";
-
+<?php
+include "header.php";
+if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 || $_SESSION['usuario']['rol'] == 2) {
 ?>
 
     <!-- Page Content -->
     <div class="container">
-    <h1 class="mt-4">reportes</h1>
-    <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap! Make sure to set the height
-        of the logo within the HTML or using CSS. For best results, use an SVG image as your logo.</p>
+        <h1 class="mt-4">Administra reportes</h1>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarReportes">
+            Agregar reporte
+        </button>
+        <hr>
+        <div id="tablaReportesLoad">
+        </div>
     </div>
 
-<!-- incluimos el archivo los scripst y el cirre de el html -->
-<?php include "footer.php"; 
-?>
+        <!-- incluimos el archivo los scripst y el cirre de el html -->
+    <?php
+    include "usuario/modalAgregarReporte.php";
+    include "footer.php";
+    ?>
+    
+    
+    <?php
+    } else {
+        header("location:../index.html");
+    }
+    ?>

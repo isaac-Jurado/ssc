@@ -1,7 +1,5 @@
 <?php
     session_start();
-    if (isset($_SESSION['usuario']) &&
-    $_SESSION['usuario']['id'] == 1 || $_SESSION['usuario']['id'] == 2) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,17 +25,27 @@
             <a class="nav-link active" aria-current="page" href="inicio.php">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="reportes.php">reportes</a>
+                <a class="nav-link" href="reportes.php">reportes</a>
             </li>
+            <!-- //!apartir de aca solo iran las vistas del usuario comun -->
+            <?php if ($_SESSION['usuario']['rol']==1) { ?>
             <li class="nav-item">
-               <a class="nav-link" href="../procesos/usuarios/login/salir.php">Salir</a>
-            </li>    
-        </ul>
+                <a class="nav-link" href="pru.php">prueva</a>
+            </li>
+            <?php } elseif ($_SESSION['usuario']['rol']==2) {
+            ?>
+            <!-- //!apartir de aca solo iran las vistas unicas del administrador -->
+            <li class="nav-item">
+                <a class="nav-link" href="usuarios.php">usuarios</a>
+            </li>
+            <?php
+                }
+            ?>
+            <li class="nav-item">
+            <a class="nav-link" href="../procesos/usuarios/login/salir.php">Salir</a>
+            </li>   
+             
+            </ul>
         </div>
     </div>
-    </nav>
-    <?php  
-    }else{
-        header("location:../index.html");
-    }
-?>
+</nav>

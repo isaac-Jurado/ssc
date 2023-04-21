@@ -3,14 +3,13 @@
     
     //con el if se hace la validacion de usuarios si se cumple con 
     //la validacion y si no se cumple te manda al index(login)
-    if (isset($_SESSION['usuario']) &&
-    $_SESSION['usuario']['rol'] == 1 || $_SESSION['usuario']['rol'] == 2) {
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 ) {
 
 ?>
 
     <!-- Page Content -->
     <div class="container">
-    <h1 class="mt-4">Logo Nav by Start Bootstrap</h1>
+    <h1 class="mt-4">prueva de vista unica del cliente</h1>
     <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap! Make sure to set the height
         of the logo within the HTML or using CSS. For best results, use an SVG image as your logo.</p>
     </div>

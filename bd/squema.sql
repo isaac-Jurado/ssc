@@ -43,3 +43,22 @@ ALTER TABLE `t_usuarios`
   ADD CONSTRAINT `fkPersona` FOREIGN KEY (`id_persona`) REFERENCES `t_persona` (`id_persona`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fkRoles` FOREIGN KEY (`id_rol`) REFERENCES `t_cat_roles` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
+
+/* //!Join formato para unir tablas */
+/* SELECT
+    usuarios.id_usuario as idUsuario,
+    usuarios.usuario as nombreUsuario,
+    roles.nombre as rol,
+    usuarios.id_rol as idRol,
+    usuarios.id_persona as idPersona,
+    persona.nombre as nombrePersona,
+    persona.paterno as paterno,
+    persona.materno as materno,
+    persona.telefono as telefono,
+    usuarios.ubicacion as ubicacion
+FROM
+ t_usuarios as usuarios
+    INNER JOIN
+t_cat_roles as roles on usuarios.id_rol = roles.id_rol
+    INNER JOIN
+t_persona as persona on usuarios.id_persona = persona.id_persona */
