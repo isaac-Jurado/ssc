@@ -6,19 +6,20 @@
     if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 2) {
 ?>
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" style="border: solid 4px ;">
         <h1 class="mt-4">ususarios </h1>
         <p>
             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuarios">Agregar</button>
+            <hr>
+            <div id="tablaUsuarios"> </div>
         </p>
-        <hr>
-        <div id="tablaUsuarios"></div>
 
     </div>
 
 <!-- incluimos el archivo los scripst y el cirre de el html -->
 <?php
     include "usuario/modalAgregar.php";
+    include "usuario/modalActualizarUsuario.php";
     include "footer.php"; 
 ?>    
 <script src="../public/js/cliente/usuarios.js"></script>

@@ -8,6 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/datatable/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../public/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../public/datatable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../public/datatable/buttons.dataTables.min.css">
+    
     <title>semaforoDeSeguridad</title>  
 </head>
 <body>

@@ -6,7 +6,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 || $_SESSION
 
     <!-- Page Content -->
     <div class="container">
-        <h1 class="mt-4">Administra reportes</h1>
+        <h1 class="mt-4">Administrar reportes</h1>
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarReportes">
             Agregar reporte
         </button>
@@ -21,7 +21,8 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 || $_SESSION
     include "footer.php";
     ?>
     
-    
+    <script src="../public/js/cliente/usuarios.js"></script>
+    <script src="../public/js/cliente/reportes.js"></script>
     <?php
     } else {
         header("location:../index.html");
