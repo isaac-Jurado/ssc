@@ -16,18 +16,18 @@
                             <select type="text" class="form-control" id="delito" name="delito" required>
                             <option value=""></option>
                                 <option value=""></option>
-                                <option value="agustin">Robo</option>
-                                <option value="bartolome">Asalto</option>
-                                <option value="pedro"></option>
-                                <option value="ana">Santa Ana</option>
-                                <option value="jeronimo">San Jeronimo</option>
-                                <option value="lorenzo">San Lorenzo</option>
-                                <option value="francisco">San Francisco</option>
-                                <option value="tecomitl">Tecomitl</option>
-                                <option value="tepenahuac">San Juan Tepenahuac</option>
-                                <option value="salvador">San Salvador</option>
-                                <option value="pablo">San Pablo</option>
-                                <option value="villa">Villa Milpa Alta</option>
+                                <option value="">Robo a transeunte</option>
+                                <option value="">Robo a casa habitación</option>
+                                <option value="">Robo a comercio</option>
+                                <option value="">Robo en transporte publico</option>
+                                <option value="">Robo a camiones repartidores</option>
+                                <option value="">Violación</option>
+                                <option value="">Abuso sexual</option>
+                                <option value="">Faltas administrativas</option>
+                                <option value="">Violencia familiar</option>
+                                <option value="">Violencia de genero</option>
+                                <option value="">Violencia contra niños y adolecentes</option>
+                                <option value="">Desaparicion de personas</option>
                             </select>
                         </div>
                         <div class="col-sm-3">
@@ -62,10 +62,10 @@
                             <select type="text" class="form-control" id="poblado" name="poblado" required>
                             <option value=""></option>
                                 <option value=""></option>
-                                <option value="agustin">propieda privad </option>
-                                <option value="bartolome">via publica</option>
-                                <option value="pedro">establecimineto</option>
-                                <option value="villa">Villa Milpa Alta</option>
+                                <option value="">Propiedad privada</option>
+                                <option value="">Via publica</option>
+                                <option value="">Establecimiento</option>
+                                
                             </select>
 
                         </div>
@@ -118,15 +118,7 @@
                                 </textarea>
                             </div>
                         </div>
-                        <hr style="background-color: black;">
-                    </div>
-                    <h2>incidentes</h2>
-                    <div class="row">
-                        <div class="col-sm-3">campo</div>
-                        <div class="col-sm-3">campo</div>
-                        <div class="col-sm-3">campo</div>
-                        <div class="col-sm-3">campo</div>
-                    </div>
+    
                 <div class="modal-footer">
                     <span class="btn btn-secondary" data-dismiss="modal">cerrar</span>
                     <button class="btn btn-primary">Agregrar</button>

@@ -22,3 +22,37 @@ function agregarNuevoUsuario() {
     });
     return false;           
 }
+
+function obtenerDatosUsuario(idUsuario) {
+    $.ajax({
+        type: "POST",
+        data: "idUsuario=" + idUsuario,
+        url: "../procesos/usuarios/AccionCrud/obtenerDatosUsuario.php",
+        success: function(respuesta){
+        console.log(respuesta)
+        respuesta = jQuery.parseJSON(respuesta)
+        $('#idUsuario').val(respuesta['idUsuario']);
+        $('#firstnameUpdate').val(respuesta['paterno']);
+        $('#lastnameUpdate').val(respuesta['materno']);
+        $('#nameUpdate').val(respuesta['nombrePersona']);
+        $('#numberUpdate').val(respuesta['telefono']);
+        $('#userUpdate').val(respuesta['nombreUsuario']);
+        $('#locationUpdate').val(respuesta['ubicacion']);
+        $('#rolUpdate').val(respuesta['idRol']);
+
+    }
+    });
+}
+
+function actualizarUsuario( ) {
+    $.ajax({
+        type: "POST",
+        data: $('#formularioactualizarusuario').serialize(),
+        url: "../procesos/usuarios/AccionCrud/actualizarUsuario.php",
+        success: function(respuesta){
+            console.log(respuesta)
+    }
+    });
+
+    return false
+}
