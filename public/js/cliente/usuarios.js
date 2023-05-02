@@ -50,7 +50,14 @@ function actualizarUsuario( ) {
         data: $('#formularioactualizarusuario').serialize(),
         url: "../procesos/usuarios/AccionCrud/actualizarUsuario.php",
         success: function(respuesta){
-            console.log(respuesta)
+            respuesta = respueta.trim();
+            if (respuesta == 1) {
+                $("#tablaUsuarios").load("usuario/tablaUsuarios.php");
+                $('#formularioagregarusuario')[0].reset();
+                Swal.fire("😎","Agregado con Exito","success");
+            }else{
+                Swal.fire("😢","Error al agregar" + respuesta,"error");
+            }
         }
     });
 
