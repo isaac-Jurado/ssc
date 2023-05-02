@@ -72,65 +72,62 @@
         $conexion = Conexion::conectar();
         $sql = "";
     }
-    public function obtenerDatosUsuario($idUsuario) {
-      $conexion = Conexion::conectar();
-      $sql = "SELECT 
-                    usuarios.id_usuario AS idUsuario,
-                    usuarios.usuario AS nombreUsuario,
-                    roles.nombre AS rol,
-                    usuarios.id_rol AS idRol,
-                    usuarios.ubicacion AS ubicacion,
-                    usuarios.id_persona AS idPersona,
-                    persona.nombre AS nombrePersona,
-                    persona.paterno AS paterno,
-                    persona.materno AS materno,
-                    persona.telefono AS telefono
-                FROM
-                    t_usuarios AS usuarios
-                        INNER JOIN
-                    t_cat_roles AS roles ON usuarios.id_rol = roles.id_rol 
-                        INNER JOIN
-                    t_persona AS persona ON usuarios.id_persona = persona.id_persona
+  public function obtenerDatosUsuario($idUsuario) {
+    $conexion = Conexion::conectar();
+    $sql = "SELECT 
+              usuarios.id_usuario AS idUsuario,
+              usuarios.usuario AS nombreUsuario,
+              roles.nombre AS rol,
+              usuarios.id_rol AS idRol,
+              usuarios.ubicacion AS ubicacion,
+              usuarios.id_persona AS idPersona,
+              persona.nombre AS nombrePersona,
+              persona.paterno AS paterno,
+              persona.materno AS materno,
+              persona.telefono AS telefono
+            FROM
+                t_usuarios AS usuarios
+                    INNER JOIN
+                t_cat_roles AS roles ON usuarios.id_rol = roles.id_rol 
+                    INNER JOIN
+                t_persona AS persona ON usuarios.id_persona = persona.id_persona
                     AND usuarios.id_usuario = '$idUsuario'";
-      $respuesta = mysqli_query($conexion, $sql);
-      $usuario = mysqli_fetch_array($respuesta);
-        
-      $datos = array( 
-          'idUsuario' => $usuario['idUsuario'],
-          'nombreUsuario' => $usuario['nombreUsuario'],
-          'rol' => $usuario['rol'],
-          'idRol' => $usuario['idRol'],
-          'ubicacion' => $usuario['ubicacion'],
-          'idPersona' => $usuario['idPersona'],
-          'nombrePersona' => $usuario['nombrePersona'],
-          'paterno' => $usuario['paterno'],
-          'materno' => $usuario['materno'],
-          'telefono' => $usuario['telefono']
-      );
-      return $datos;
-    } 
-//       public function actualizarUsuario($datos) {
-//           $conexion = Conexion::conectar();
-//           $exitoPersona = self::actualizarPersona($datos);
-
-//           if ($exitoPersona) {
-//                 $sql = "UPDATE t_usuarios SET id_rol = ?,
-//                                                 usuario = ?,
-//                                                 ubicacion = ?
-//                         WHERE id_usuario = ?";
-//               $query = $conexion->prepare($sql);
-//               $query->bind_param('issi', $datos['idRol'],
-//                                           $datos['usuario'],
-//                                           $datos['ubicacion'],
-//                                           $datos['idUsuario']);
-//               $respuesta = $query->execute();
-//               $query->close();
-//               return $respuesta; 
-
-//           } else {
-//               return 0; 
-//           }
-//       }
+    $respuesta = mysqli_query($conexion, $sql);
+    $usuario = mysqli_fetch_array($respuesta); 
+    $datos = array( 
+        'idUsuario' => $usuario['idUsuario'],
+        'nombreUsuario' => $usuario['nombreUsuario'],
+        'rol' => $usuario['rol'],
+        'idRol' => $usuario['idRol'],
+        'ubicacion' => $usuario['ubicacion'],
+        'idPersona' => $usuario['idPersona'],
+        'nombrePersona' => $usuario['nombrePersona'],
+        'paterno' => $usuario['paterno'],
+        'materno' => $usuario['materno'],
+        'telefono' => $usuario['telefono']
+    );
+    return $datos;
+  } 
+  //   public function actualizarUsuario($datos) {
+  //       $conexion = Conexion::conectar();
+  //       $exitoPersona = self::actualizarPersona($datos);
+  //       if ($exitoPersona) {
+  //         $sql = "UPDATE t_usuarios SET id_rol = ?,
+  //                                       usuario = ?,
+  //                                       ubicacion = ?
+  //                 WHERE id_usuario = ?";
+  //         $query = $conexion->prepare($sql);
+  //         $query->bind_param('issi', $datos['idRol'],
+  //                                   $datos['usuario'],
+  //                                      $datos['ubicacion'],
+  //                                      $datos['idUsuario']);
+  //         $respuesta = $query->execute();
+  //         $query->close();
+  //         return $respuesta
+  //       }else{
+  //         return 0; 
+  //      }
+  //  }
 //       public function actualizarPersona($datos) {
 //         $conexion = Conexion::conectar(); 
 

@@ -59,9 +59,7 @@
                         </div>
                         <div class="col-sm-3">
                         <label for="poblado" >lugar:</label>
-                            <select type="text" class="form-control" id="poblado" name="poblado" required>
-                            <option value=""></option>
-                                <option value=""></option>
+                            <select type="text" class="form-control" id="poblado" name="poblado" required>>
                                 <option value="">Propiedad privada</option>
                                 <option value="">Via publica</option>
                                 <option value="">Establecimiento</option>

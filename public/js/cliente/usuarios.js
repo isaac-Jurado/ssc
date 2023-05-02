@@ -51,7 +51,7 @@ function actualizarUsuario( ) {
         url: "../procesos/usuarios/AccionCrud/actualizarUsuario.php",
         success: function(respuesta){
             console.log(respuesta)
-    }
+        }
     });
 
     return false
