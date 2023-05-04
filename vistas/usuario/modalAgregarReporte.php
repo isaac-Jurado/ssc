@@ -15,7 +15,6 @@
                             <label for="delito" >Agregar delito:</label>
                             <select type="text" class="form-control" id="delito" name="delito" required>
                             <option value=""></option>
-                                <option value=""></option>
                                 <option value="">Robo a transeunte</option>
                                 <option value="">Robo a casa habitación</option>
                                 <option value="">Robo a comercio</option>
@@ -33,7 +32,6 @@
                         <div class="col-sm-3">
                             <label for="poblado" >Agregar poblado:</label>
                             <select type="text" class="form-control" id="poblado" name="poblado" required>
-                            <option value=""></option>
                                 <option value=""></option>
                                 <option value="agustin">San Agustin </option>
                                 <option value="bartolome">San Bartolome</option>
@@ -59,7 +57,8 @@
                         </div>
                         <div class="col-sm-3">
                         <label for="poblado" >lugar:</label>
-                            <select type="text" class="form-control" id="poblado" name="poblado" required>>
+                            <select type="text" class="form-control" id="poblado" name="poblado" required>
+                                <option value=""></option>
                                 <option value="">Propiedad privada</option>
                                 <option value="">Via publica</option>
                                 <option value="">Establecimiento</option>

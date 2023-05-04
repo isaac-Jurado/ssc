@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#tablaReportesLoad').load("usuario/tablaReporte.php");
+    $('#tablaReportesLoad').load("usuario/tablaReportes.php");
 
 });
 
@@ -25,3 +25,5 @@ $.ajax({
 
     return false;
 }
+
+

@@ -67,12 +67,7 @@
       $query->close();
       return $idPersona;
     }
-
-    public function agregarNuevoReporte($datos){
-        $conexion = Conexion::conectar();
-        $sql = "";
-    }
-  public function obtenerDatosUsuario($idUsuario) {
+    public function obtenerDatosUsuario($idUsuario) {
     $conexion = Conexion::conectar();
     $sql = "SELECT 
               usuarios.id_usuario AS idUsuario,
@@ -164,6 +159,29 @@
       $idPersona = mysqli_fetch_array($respuesta)['idPersona'];
       return $idPersona;
   }
+  public function agregarNuevoReporte($datos){
+      $conexion = Conexion::conectar();
+      $IdReporte = self::agregarReporte($datos);
+      $sql = " INSERT INTO t_reportes";
+  }
+  //LO QEU SE LLEBA EN ESTA SECCION DE AGREGAR
+  public function agregarReporte($datos){
+      $conexion = Conexion::conectar();
+      $sql = "INSERT INTO t_reportes ( id_reporte,  
+                                        hora,
+                                        fecha,
+                                        observaciones)
+              VALUES (?, ?, ?, ?)";
+              $query =  $conexion->prepare($sql);
+              $query->bind_param("ssss", $datos['IdReporte'],
+                                          $datos['tiempo'],
+                                          $datos['fecha'],
+                                          $datos['observaciones']);
+              $respuesta = $query->execute();
+              $IdReporte = mysqli_insert_id($conexion);
+              $query->close();
+              return $IdReporte;
+}
 
 }   
 

@@ -4,83 +4,74 @@
     $con = new Conexion();
     $conexion = $con->conectar();
     $sql = "SELECT 
-                usuarios.id_usuario AS idUsuario,
-                usuarios.usuario AS nombreUsuario,
-                roles.nombre AS rol,
-                usuarios.id_rol AS idRol,
-                usuarios.ubicacion AS ubicacion,
-                usuarios.activo AS estatus,
-                usuarios.id_persona AS idPersona,
-                persona.nombre AS nombrePersona,
-                persona.paterno AS paterno,
-                persona.materno AS materno,
-                persona.fecha_nacimiento AS fechaNacimiento,
-                persona.sexo AS sexo,
-                persona.correo AS correo,
-                persona.telefono AS telefono
-            FROM
-                t_usuarios AS usuarios
-                    INNER JOIN
-                t_cat_roles AS roles ON usuarios.id_rol = roles.id_rol 
-                    INNER JOIN
-                t_persona AS persona ON usuarios.id_persona = persona.id_persona";
+    reporte.id_reporte AS idReporte,
+    reporte.fecha AS fecha,
+    reporte.hora AS hora,
+    reporte.observaciones AS observaciones,
+    delito.nombre AS nombreDelito,
+    delito.id_delito AS idDelito,
+    lugar.lugar_reporte AS lugarReporte,
+    poblado.poblado AS pueblo,
+    transAg.transporte_agresor AS transporteAg,
+    transVi.transporte_victima AS transporteVi,
+    sexoA.sexo_agresor AS sexoAgr,
+    sexoV.sexo_victima AS sexoVi
+FROM
+    t_reportes AS reporte
+        INNER JOIN
+    t_cat_delitos AS delito ON reporte.id_delito = delito.id_delito
+        INNER JOIN
+    t_cat_poblado AS poblado ON reporte.id_poblado = poblado.id_poblado
+        INNER JOIN
+    t_cat_lugar_reporte AS lugar ON reporte.id_lugar_reporte = lugar.id_lugar_reporte
+        INNER JOIN
+    t_cat_transporte_agresor AS transAg ON reporte.id_transporte_agresor = transAg.id_transporte_agresor
+        INNER JOIN
+    t_cat_transporte_victima AS transVi ON reporte.id_transporte_victima = transVi.id_transporte_victima
+        INNER JOIN
+    t_cat_sexo_agresor AS sexoA ON reporte.id_sexo_agresor = sexoA.id_sexo_agresor
+        INNER JOIN
+    t_cat_sexo_victima AS sexoV ON reporte.id_sexo_victima = sexoV.id_sexo_victima";
     $respuesta = mysqli_query($conexion, $sql);
 ?>
 <table class="table table-sm table-dark dt-responsive nowrap" style="width:100%" 
         id="tablaReportesDataTable">
     <thead>  
-        <th>Delito</th>
-        <th>Tiempo</th>
+        <th>Id</th>
         <th>Fecha</th>
-        <th>SexoV</th>
-        <th>SexoA</th>
-        <th>TransporteA</th>
-        <th>TransporteV</th>
+        <th>Hora</th>
         <th>Observaciones</th>
+        <th>Delito</th>
+        <th>Lugar</th>
+        <th>Pueblo</th>
+        <th>TrnasporteAgre</th>
+        <th>TransporteVict</th>
+        <th>SexoAgre</th>
+        <th>SexoVict</th>
         <th>Editar</th>
-        <th>Eliminar</th>
+        <th>Editar</th>
     </thead>
     <tbody>
         <?php 
             while($mostrar = mysqli_fetch_array($respuesta)){
         ?>
         <tr>
-                <td><?php echo $mostrar['delito'];?></td>
-                <td><?php echo $mostrar['poblado'];?></td>
-                <td><?php echo $mostrar['tiempo'];?></td>
+                <td><?php echo $mostrar['idReporte'];?></td>
                 <td><?php echo $mostrar['fecha'];?></td>
-                <td><?php echo $mostrar['sexoV'];?></td>
-                <td><?php echo $mostrar['sexoA'];?></td>
-                <td><?php echo $mostrar['transporteA'];?></td>
-                <td><?php echo $mostrar['transporteV'];?></td>
+                <td><?php echo $mostrar['hora'];?></td>
                 <td><?php echo $mostrar['observaciones'];?></td>
-                <td>
-                    <button class="btn btn-success btn-sm">
-                        Cambiar password
-                    </button>
-            </td>
-            <td>
-        <?php 
-            if ($mostrar['estatus'] == 1) {
-        ?>
-            <button class="btn btn-info btn-sm">
-                Activo 
-            </button>
-            <?php 
-            } else {
-            ?>
-                <button class="btn btn-info btn-sm">
-                Inactivo
-            </button>
-            <?php 
-                } 
-            ?>
-            </td>
+                <td><?php echo $mostrar['nombreDelito'];?></td>
+                <td><?php echo $mostrar['lugarReporte'];?></td>
+                <td><?php echo $mostrar['pueblo'];?></td>
+                <td><?php echo $mostrar['transporteAg'];?></td>
+                <td><?php echo $mostrar['transporteVi'];?></td>
+                <td><?php echo $mostrar['sexoAgr'];?></td>
+                <td><?php echo $mostrar['sexoVi'];?></td>
             <td>
                 <button class="btn btn-warning btn-sm"  
                         data-toggle="modal" 
-                        data-target="#modalActualizarUsuarios"
-                        onclick="obtenerDatosUsuario(<?php echo $mostrar['idUsuario'] ?>)">
+                        data-target="#modalActualizarReporte"
+                        onclick="obtenerDatosUsuario(<?php echo $mostrar['idReporte'] ?>)">
                             Editar 
                 </button>
             </td>

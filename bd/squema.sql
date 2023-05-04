@@ -31,13 +31,13 @@ CREATE TABLE `t_cat_sexo_victima` (
 CREATE TABLE `t_cat_lugar_reporte` (
   `id_lugar_reporte` int(11) NOT NULL,
   `lugar_reporte` varchar(245) NOT NULL,
-  'descripcion' varchar(245) DEFAULT NULL
+  `descripcion` varchar(245) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 CREATE TABLE `t_cat_delitos` (
   `id_delito` int(11) NOT NULL,
   `nombre` varchar(245) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-CREATE TABLE `t_reportes-` (
+CREATE TABLE `t_reportes` (
   `id_reporte` int(11) NOT NULL,
   `id_poblado` int(11) NOT NULL,
   `id_lugar_reporte` int(11) NOT NULL,
@@ -111,16 +111,23 @@ INSERT INTO `t_cat_transporte_agresor` (`id_transporte_agresor`, `transporte_agr
 INSERT INTO `t_cat_lugar_reporte` (`id_lugar_reporte`, `lugar_reporte`, `descripcion`) VALUES
 (1, 'propiedad privada','terrenos, casa habitacion  propietario'),
 (2, 'via Publica','en alguna calle perteneciente a via publica');
+INSERT INTO `t_cat_sexo_agresor` (`id_sexo_agresor`, `sexo_agresor`) VALUES
+(1, 'Femenino'),
+(2, 'Masculino');
+INSERT INTO `t_cat_sexo_victima` (`id_sexo_victima`, `sexo_victima`) VALUES
+(1, 'Femenino'),
+(2, 'Masculino');
+
 ALTER TABLE `t_cat_roles`
   ADD PRIMARY KEY (`id_rol`);
 ALTER TABLE `t_cat_poblado`
   ADD PRIMARY KEY (`id_poblado`);
 /* //?esto tampoco se ha ejecutado */
   ALTER TABLE `t_cat_transporte_victima`
-    ADD PRIMARY KEY (`id_trasnporte_victima`);
+    ADD PRIMARY KEY (`id_transporte_victima`);
   ALTER TABLE `t_cat_transporte_agresor`
     ADD PRIMARY KEY (`id_transporte_agresor`);
-  ALTER TABLE `t_ca_sexo_agresor`
+  ALTER TABLE `t_cat_sexo_agresor`
     ADD PRIMARY KEY (`id_sexo_agresor`);
   ALTER TABLE `t_cat_sexo_victima`
     ADD PRIMARY KEY (`id_sexo_victima`);
@@ -137,7 +144,7 @@ ALTER TABLE `t_usuarios`
   ADD PRIMARY KEY (`id_usuario`),
   ADD KEY `fkPersona_idx` (`id_persona`),
   ADD KEY `fkRoles_idx` (`id_rol`);
-  ALTER TABLE `t_reporte`
+  ALTER TABLE `t_reportes`
   ADD PRIMARY KEY (`id_reporte`),
   ADD KEY `fkSexoV_idx` (`id_sexo_victima`),
   ADD KEY `fkSexoA_idx` (`id_sexo_agresor`),

@@ -1,17 +1,19 @@
 <?php
 
 $datos = array(
-    "delito" => $_POST['delito'],
-    "poblado" => $_POST['poblado'],
-    "tiempo" => $_POST['tiempo'],
+    "idReporte" => $_POST['idReporte'],
     "fecha" => $_POST['fecha'],
-    "sexoV" => $_POST['sexoV'],
-    "sexoA" => $_POST['sexoA'],
-    "transporteV" => $_POST['transporteV'],
-    "transporteA" => $_POST['transporteA'],
-    "observaciones" => $_POST['observaciones']
+    "hora" => $_POST['hora'],
+    "observaciones" => $_POST['observaciones'],
+    "nombreDelito" => $_POST['nombreDelito'],
+    "LugarReporte" => $_POST['LugarReporte'],
+    "pueblo" => $_POST['pueblo'],
+    "transporteAg" => $_POST['transporteAg'],
+    "transporteVi" => $_POST['transporteVi'],
+    "sexoAgr" => $_POST['sexoAgr'],
+    "sexoVi" => $_POST['sexoVi'],
 );
- include "../../../clases/Usuarios.php";
- $Usuarios = new Usuarios();
+    include "../../../clases/Usuarios.php";
+    $Usuarios = new Usuarios();
 
-echo $Reportes-> agregarNuevoReporte($datos);
+echo $Usuarios-> agregarNuevoReporte($datos);
