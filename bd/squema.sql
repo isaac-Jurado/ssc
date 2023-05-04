@@ -162,6 +162,8 @@ ALTER TABLE `t_usuarios`
 ALTER TABLE `t_usuarios`
   ADD CONSTRAINT `fkPersona` FOREIGN KEY (`id_persona`) REFERENCES `t_persona` (`id_persona`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fkRoles` FOREIGN KEY (`id_rol`) REFERENCES `t_cat_roles` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `t_reportes`
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 

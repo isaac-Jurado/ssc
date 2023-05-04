@@ -46,28 +46,28 @@
     }
 
     //! se le pasa como parametro el arreglo que vine de ../procesos/usuarios/AccionCrud/agregarUsuario.php
-    public function agregarPersona($datos) {
-      //agregamos la conexion
-      $conexion = Conexion::conectar();
-      //se prepara el query para insertar
-      $sql = "INSERT INTO t_persona (paterno,
-                                      materno,
-                                      nombre,                                      
-                                      telefono)
-              /* al ser una sentencia preparada se colocan los signos de interrogacion */
-              VALUES (?, ?, ?, ?)";
-      $query = $conexion->prepare($sql);
-      //! asocia el tipo de dato con la variable que estas trabajando
-      $query->bind_param("ssss", $datos['firstname'],
-                                    $datos['lastname'], 
-                                    $datos['name'],
-                                    $datos['number']);
-      $respuesta  = $query->execute();
-      $idPersona = mysqli_insert_id($conexion); 
-      $query->close();
-      return $idPersona;
-    }
-    public function obtenerDatosUsuario($idUsuario) {
+  public function agregarPersona($datos) {
+    //agregamos la conexion
+    $conexion = Conexion::conectar();
+    //se prepara el query para insertar
+    $sql = "INSERT INTO t_persona (paterno,
+                                    materno,
+                                    nombre,                                      
+                                    telefono)
+            /* al ser una sentencia preparada se colocan los signos de interrogacion */
+            VALUES (?, ?, ?, ?)";
+    $query = $conexion->prepare($sql);
+    //! asocia el tipo de dato con la variable que estas trabajando
+    $query->bind_param("ssss", $datos['firstname'],
+                                  $datos['lastname'], 
+                                  $datos['name'],
+                                  $datos['number']);
+    $respuesta  = $query->execute();
+    $idPersona = mysqli_insert_id($conexion); 
+    $query->close();
+    return $idPersona;
+  }
+  public function obtenerDatosUsuario($idUsuario) {
     $conexion = Conexion::conectar();
     $sql = "SELECT 
               usuarios.id_usuario AS idUsuario,
@@ -159,29 +159,36 @@
       $idPersona = mysqli_fetch_array($respuesta)['idPersona'];
       return $idPersona;
   }
-  public function agregarNuevoReporte($datos){
-      $conexion = Conexion::conectar();
-      $IdReporte = self::agregarReporte($datos);
-      $sql = " INSERT INTO t_reportes";
-  }
   //LO QEU SE LLEBA EN ESTA SECCION DE AGREGAR
-  public function agregarReporte($datos){
-      $conexion = Conexion::conectar();
-      $sql = "INSERT INTO t_reportes ( id_reporte,  
+  public function agregarNuevoReporte($datos)
+  {
+    $conexion = Conexion::conectar();
+    $sql = "INSERT INTO t_reportes ( id_poblado,
+                                        id_lugar_reporte,
+                                        id_delito,
+                                        id_sexo_victima,
+                                        id_sexo_agresor,
+                                        id_transporte_victima,
+                                        id_transporte_agresor,
                                         hora,
                                         fecha,
                                         observaciones)
-              VALUES (?, ?, ?, ?)";
-              $query =  $conexion->prepare($sql);
-              $query->bind_param("ssss", $datos['IdReporte'],
-                                          $datos['tiempo'],
-                                          $datos['fecha'],
-                                          $datos['observaciones']);
-              $respuesta = $query->execute();
-              $IdReporte = mysqli_insert_id($conexion);
-              $query->close();
-              return $IdReporte;
-}
+              VALUES (?, ?, ?, ?,?, ?, ?, ?, ?, ?)";
+    $query =  $conexion->prepare($sql);
+    $query->bind_param("iiiiiiisss", $datos['poblado'],
+                                      $datos['lugar'],
+                                      $datos['delito'],
+                                      $datos['sexoV'],
+                                      $datos['sexoA'],
+                                      $datos['transporteV'],
+                                      $datos['transporteA'],
+                                      $datos['tiempo'],
+                                      $datos['fecha'],
+                                      $datos['observaciones']);
+    $respuesta = $query->execute();
+    $query->close();
+    return $respuesta;
+  }
 
 }   
 

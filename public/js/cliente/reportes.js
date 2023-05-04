@@ -6,20 +6,20 @@ $(document).ready(function(){
 
 function agregarNuevoReporte(){
 
-$.ajax({
-    type: "POST",
-    data: $('#frmAgregarReporte').serialize(),
-    url: "../procesos/usuarios/AccionCrud/agregarNuevoReporte.php",
-    success:function(){
-        respuesta = respuesta.trim();
-        if (respuesta == 1) {
-            $('#tablaReportesLoad').load("usuario/tablaReporte.php");
-            $('#frmAgregarReporte')[0].reset();
-            swal.fire(":D","Agregado con exito!","success");
-        }else {
-            swal.fire(":(", "Error al agregar! " + respuesta, "error");
+    $.ajax({
+        type: "POST",
+        data: $('#formularioagregarReporte').serialize(),
+        url: "../procesos/usuarios/AccionCrud/agregarNuevoReporte.php",
+        success:function(respuesta){
+            respuesta = respuesta.trim();
+            if (respuesta == 1) {
+                $('#tablaReportesLoad').load("usuario/tablaReportes.php");
+                $('#formularioagregarReporte')[0].reset();
+                Swal.fire(":D","Agregado con exito!","success");
+            }else {
+                Swal.fire(":(", "Error al agregar! " + respuesta, "error");
+            }
         }
-    }
     });
 
 
