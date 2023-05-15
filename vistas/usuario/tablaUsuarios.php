@@ -60,8 +60,9 @@
                 </button>
             </td>
             <td>
-                <button class="btn btn-danger">
-                    Eliminar    
+                <button class="btn btn-danger" 
+                onclick="eliminarUsuario(<?php echo $mostrar['idUsuario'] ?>)">
+                    Eliminar     
                 </button>
             </td>
             <?php

@@ -67,6 +67,17 @@
     $query->close();
     return $idPersona;
   }
+  ///funcion para eliminar a los usuarios 
+  public function eliminarUsuario($idUsuario){
+    $conexion = Conexion::conectar();
+    $sql = "DELETE FROM t_usuarios WHERE id_usuario = ?";
+    $query = $conexion->prepare($sql);
+    $query->bind_param('i', $idUsuario);
+    $respuesta = $query->execute();
+    $query->close();
+    return $respuesta;  
+  }
+
   public function obtenerDatosUsuario($idUsuario) {
     $conexion = Conexion::conectar();
     $sql = "SELECT 
@@ -189,7 +200,7 @@
     $query->close();
     return $respuesta;
   }
-
+  
 }   
 
 

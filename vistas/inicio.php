@@ -8,12 +8,48 @@
 
 ?>
 
-    <!-- Page Content -->
-    <div class="container">
-    <h1 class="mt-4">Logo Nav by Start Bootstrap</h1>
-    <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap! Make sure to set the height
-        of the logo within the HTML or using CSS. For best results, use an SVG image as your logo.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-6">
+            
+            <canvas id="myChart" width="50px" height="50px"></canvas>
+        </div>
     </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+</script>
+</body>
+</html>
 
 <!-- incluimos el archivo los scripst y el cirre de el html -->
 <?php include "footer.php"; 

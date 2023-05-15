@@ -63,3 +63,33 @@ function actualizarUsuario( ) {
 
     return false
 }
+
+
+function eliminarUsuario(idUsuario){
+    Swal.fire({
+        title:'Estas seguro de eliminar este registro?',
+        text: "Una vez eliminado no podras recuperarlo!",
+        icon : 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+
+    }).then((result) => {
+        if (result.isConfirmed){
+            $.ajax({
+                type: "POST",
+                data: "idUsuario=" + idUsuario,
+                url:"../procesos/usuarios/AccionCrud/eliminarUsuario.php",
+                success:function(respuesta){
+                    if (respuesta ==1){
+                        $("#tablaUsuarios").load("usuario/tablaUsuarios.php");
+                        Swal.fire(":D","Eliminado con exito!","success");
+                    }else {
+                        Swal.fire(":(","Fallo al eliminar!" + respuesta, "error");
+                    }
+                }
+            });
+        }
+    })
+}
