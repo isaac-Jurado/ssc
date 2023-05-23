@@ -171,8 +171,7 @@
       return $idPersona;
   }
   //LO QEU SE LLEBA EN ESTA SECCION DE AGREGAR
-  public function agregarNuevoReporte($datos)
-  {
+  public function agregarNuevoReporte($datos){
     $conexion = Conexion::conectar();
     $sql = "INSERT INTO t_reportes ( id_poblado,
                                         id_lugar_reporte,
@@ -199,6 +198,14 @@
     $respuesta = $query->execute();
     $query->close();
     return $respuesta;
+  }
+
+  public function traerDatosGraficosBar(){
+    $conexion = Conexion::conectar();
+    $sql = "SELECT * FROM t_reportes";
+    $respuesta = mysqli_query($conexion, $sql);
+    $idPe = mysqli_fetch_array($respuesta);
+    return $idPe;
   }
   
 }   

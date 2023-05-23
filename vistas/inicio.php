@@ -17,10 +17,26 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="row">
-        <div class="col-sm-6">
-            
-            <canvas id="myChart" width="50px" height="50px"></canvas>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">  
+                <canvas id="myChart" width="60px" height="50px"></canvas>
+            </div>
+            <div class="col-sm-6">
+                <div class="caja">
+                    <select onChange="mostrarResultados(this.value);">
+                        <?php
+                            for($i=2000;$i<2020;$i++){
+                                if($i == 2015){
+                                    echo '<option value="'.$i.'" selected>'.$i.'</option>';
+                                }else{
+                                    echo '<option value="'.$i.'">'.$i.'</option>';
+                                }
+                            }
+                        ?>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -32,10 +48,10 @@
         new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
             datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [2,3,4,9],
             borderWidth: 1
             }]
         },
