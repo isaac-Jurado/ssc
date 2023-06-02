@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('#tablaReportesLoad').load("usuario/tablaReportes.php");
-
+    crearSelectAlgo();
 });
 
 
@@ -26,4 +26,22 @@ function agregarNuevoReporte(){
     return false;
 }
 
+function crearSelectAlgo(){
+
+    $.ajax({
+        type: "POST",
+        data: $('#formularioagregarReporte').serialize(),
+        url: "../procesos/usuarios/AccionCrud/select.php",
+        success:function(respuesta){
+            console.log(respuesta)
+            respuesta = respuesta.trim();
+            
+        }
+    });
+    //ESTE SELECT ES QUE APARECE Y ES EL QUE NOS MOSTRARA LA PARTE DE LOS DELITOS 
+
+    let cadenaObtenido = '<select name="delito" id="delito"></select>';
+    $('#selectalgo').html(cadenaObtenido);
+
+}
 

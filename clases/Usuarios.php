@@ -207,6 +207,17 @@
     $idPe = mysqli_fetch_array($respuesta);
     return $idPe;
   }
+  public function agregarNuevoDelito($datos){
+    $conexion = Conexion::conectar();
+    $sql = "INSERT INTO t_cat_delitos ( nombre
+                                    )
+              VALUES (?)";
+    $query =  $conexion->prepare($sql);
+    $query->bind_param("s", $datos['Delito']);
+    $respuesta = $query->execute();
+    $query->close();
+    return $respuesta;
+  }
   
 }   
 
