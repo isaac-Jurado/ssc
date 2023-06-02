@@ -27,6 +27,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 || $_SESSION
     
     <script src="../public/js/cliente/usuarios.js"></script>
     <script src="../public/js/cliente/reportes.js"></script>
+    <script src="../public/js/cliente/delito.js"></script>
     <?php
     } else {
         header("location:../index.html");
