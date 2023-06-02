@@ -10,6 +10,9 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 || $_SESSION
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarReportes">
             Agregar reporte
         </button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarDelito">
+            Agregar Delito
+        </button>
         <hr>
         <div id="tablaReportesLoad">
         </div>
@@ -17,6 +20,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 || $_SESSION
 
         <!-- incluimos el archivo los scripst y el cirre de el html -->
     <?php
+    include "usuario/modalAgregarDelito.php";
     include "usuario/modalAgregarReporte.php";
     include "footer.php";
     ?>
