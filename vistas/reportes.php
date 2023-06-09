@@ -20,14 +20,14 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 || $_SESSION
 
         <!-- incluimos el archivo los scripst y el cirre de el html -->
     <?php
-    include "usuario/modalAgregarDelito.php";
-    include "usuario/modalAgregarReporte.php";
+    include "reportes/modalAgregarDelito.php";
+    include "reportes/modalAgregarReporte.php";
     include "footer.php";
     ?>
     
-    <script src="../public/js/cliente/usuarios.js"></script>
+   
+    
     <script src="../public/js/cliente/reportes.js"></script>
-    <script src="../public/js/cliente/delito.js"></script>
     <?php
     } else {
         header("location:../index.html");

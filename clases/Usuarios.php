@@ -209,8 +209,7 @@
   }
   public function agregarNuevoDelito($datos){
     $conexion = Conexion::conectar();
-    $sql = "INSERT INTO t_cat_delitos ( nombre
-                                    )
+    $sql = "INSERT INTO t_cat_delitos ( nombre )
               VALUES (?)";
     $query =  $conexion->prepare($sql);
     $query->bind_param("s", $datos['Delito']);
