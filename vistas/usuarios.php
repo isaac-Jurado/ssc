@@ -6,7 +6,7 @@
     if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 2) {
 ?>
     <!-- Page Content -->
-    <div class="container" style="border: solid 4px ;">
+    <div class="container mt-4">
         <h1 class="mt-4">Usuarios </h1>
         <p>
             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuarios">Agregar</button>

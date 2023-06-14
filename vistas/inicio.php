@@ -8,31 +8,99 @@
 
 ?>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="caja">
-                        <select onChange="mostrarResultados(this.value);">
-                            <?php
-                                for($i=1900;$i<2025;$i++){
-                                    if($i == 2023){
-                                        echo '<option value="'.$i.'" selected>'.$i.'</option>';
-                                    }else{
-                                        echo '<option value="'.$i.'">'.$i.'</option>';
-                                    }
-                                }
-                            ?>
-                        </select>
-                    </div>
+<div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="caja">
+                    <select onChange="mostrarResultados(this.value);">
+                        <?php
+                        for ($i = 1900; $i < 2025; $i++) {
+                            if ($i == 2023) {
+                                echo '<option value="' . $i . '" selected>' . $i . '</option>';
+                            } else {
+                                echo '<option value="' . $i . '">' . $i . '</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-6">
-                    <div class="resultados"><canvas id="grafico"></canvas></div>
+            <div class="col">
+                <h1>
+                    Crimenes
+                </h1>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">Robos</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+            </div>
+
+        </div>
+        <div class="col-xl-3 col-md-6">
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">feminisidio</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
-            
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-success text-white mb-4">
+                <div class="card-body">Robo a transeunte</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-danger text-white mb-4">
+                <div class="card-body">Abuso Sexual</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+			<div class="col-xl-6">
+				<div class="card mb-4">
+					<div class="card-header">
+						<i class="fas fa-chart-area me-1"></i>
+						Area Chart Example
+					</div>
+					<div class="card-body"><canvas id="canvas-bar" width="100%" height="40" ></canvas></div>
+				</div>
+			</div>
+			<div class="col-xl-6">
+				<div class="card mb-4">
+					<div class="card-header">
+						<i class="fas fa-chart-bar me-1"></i>
+						Robo a Transeunte
+					</div>
+					<div class="card-body"><canvas id="grafico" width="100%" height="40" ></canvas></div>
+				</div>
+			</div>
+		</div>
+
+</div>
+
+         
 
 
 
