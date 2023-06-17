@@ -22,7 +22,7 @@ function mostrarResultados(year){
                     ]
                 }
             var contexto = document.getElementById('grafico').getContext('2d');
-            window.Barra = new Chart(contexto).Radar(Datos, { responsive : true });
+            window.Barra = new Chart(contexto).Bar(Datos, { responsive : true });
             Barra.clear();
         }
     });
