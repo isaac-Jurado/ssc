@@ -1,8 +1,8 @@
 
 /* BASIC */
 
-html {  
-    background-color: #f1f1f1;
+body {  
+    background-image: url("../img/logoMA1.png");
 }
 
 body {
@@ -15,6 +15,11 @@ a {
     display:inline-block;
     text-decoration: none;
     font-weight: 400;
+}
+
+h1{
+    color: #ffffff;
+    background-color: #56baed;
 }
 
 h2 {
@@ -44,7 +49,7 @@ h2 {
 #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #0c447691;
+    background: #0c4576;
     padding: 30px;
     width: 90%;
     max-width: 450px;

@@ -10,23 +10,7 @@
 
 <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="caja">
-                    <select onChange="mostrarResultados(this.value);">
-                        <?php
-                        for ($i = 1900; $i < 2025; $i++) {
-                            if ($i == 2023) {
-                                echo '<option value="' . $i . '" selected>' . $i . '</option>';
-                            } else {
-                                echo '<option value="' . $i . '">' . $i . '</option>';
-                            }
-                        }
-                        ?>
-                    </select>
-
-                </div>
-            </div>
-            <div class="col">
+           <div class="col">
                 <h1>
                     Crimenes
                 </h1>
@@ -42,7 +26,7 @@
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">Robos</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <a class="small text-white stretched-link" href="robos.php">View Details</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
             </div>
@@ -84,7 +68,7 @@
 						<i class="fas fa-chart-area me-1"></i>
 						Area Chart Example
 					</div>
-					<div class="card-body"><canvas id="canvas-bar" width="100%" height="40" ></canvas></div>
+					<div class="card-body" style="width: 95%; height:100%;"><canvas id="grafico1" width="100%" height="40" ></canvas></div>
 				</div>
 			</div>
 			<div class="col-xl-6">
@@ -93,11 +77,31 @@
 						<i class="fas fa-chart-bar me-1"></i>
 						Robo a Transeunte
 					</div>
-					<div class="card-body"><canvas id="grafico" width="100%" height="40" ></canvas></div>
+					<div class="card-body" style="width: 95%; height:100%;"><canvas id="grafico2" width="100%" height="40" ></canvas></div>
 				</div>
 			</div>
 		</div>
 
+        <div class="row mt-3">
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <div class="">
+
+                    <h3>Relacion de agresores por sexo</h3>
+                    <div>
+                        <canvas id="canvas-area-agresor" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <div class="">
+
+                    <h3>Relacion de victimas por sexo</h3>
+                    <div>
+                        <canvas id="canvas-area-victima" />
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 
          
