@@ -26,7 +26,9 @@
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">Robos</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="robos.php">View Details</a>
+                        <button class="btn btn-outline-warning" data-toggle="modal" data-target="#modalRobosinfo">
+                            View Details
+                        </button>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
             </div>
@@ -88,7 +90,7 @@
 
                     <h3>Relacion de agresores por sexo</h3>
                     <div>
-                        <canvas id="canvas-area-agresor" />
+                        <canvas id="agresor" />
                     </div>
                 </div>
             </div>
@@ -97,7 +99,7 @@
 
                     <h3>Relacion de victimas por sexo</h3>
                     <div>
-                        <canvas id="canvas-area-victima" />
+                        <canvas id="victima" />
                     </div>
                 </div>
             </div>
@@ -108,7 +110,11 @@
 
 
 
-<?php include "footer.php"; ?>
+
+<?php 
+    include "dashboard/robos.php";
+    include "footer.php"; 
+?>
 
 <script src="../public/js/cliente/grafico.js"></script>
 

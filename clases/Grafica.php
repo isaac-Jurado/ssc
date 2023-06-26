@@ -32,8 +32,9 @@
 	    }
 
 		public function build_report_sexo_agresor(){
-		$consulta_femenino = "SELECT COUNT(id_sexo_agresor) AS total FROM t_reportes WHERE id_sexo_agresor = 1 and year(fecha)=2023";
-		$consulta_masculino = "SELECT COUNT(id_sexo_agresor) AS total FROM t_reportes WHERE id_sexo_agresor = 2 and year(fecha)=2023";
+		$año = date('Y');
+		$consulta_femenino = "SELECT COUNT(id_sexo_agresor) AS total FROM t_reportes WHERE id_sexo_agresor = 1 and year(fecha)=$año";
+		$consulta_masculino = "SELECT COUNT(id_sexo_agresor) AS total FROM t_reportes WHERE id_sexo_agresor = 2 and year(fecha)=$año";
 
 		$sql1 = $this->conectar()->query($consulta_femenino);
 		$sql2 = $this->conectar()->query($consulta_masculino);
@@ -46,8 +47,9 @@
 
 		
 		public function build_report_sexo_victima()	{
-		$consulta_femenino = "SELECT COUNT(id_sexo_victima) AS total FROM t_reportes WHERE id_sexo_victima = 1";
-		$consulta_masculino = "SELECT COUNT(id_sexo_victima) AS total FROM t_reportes WHERE id_sexo_victima = 2";
+		$año = date('Y');
+		$consulta_femenino = "SELECT COUNT(id_sexo_victima) AS total FROM t_reportes WHERE id_sexo_victima = 1 and year(fecha)=$año";
+		$consulta_masculino = "SELECT COUNT(id_sexo_victima) AS total FROM t_reportes WHERE id_sexo_victima = 2 and year(fecha)=$año";
 
 		$sql1 = $this->conectar()->query($consulta_femenino);
 		$sql2 = $this->conectar()->query($consulta_masculino);
