@@ -81,29 +81,3 @@ function dashboard1(){
           
     })
 }
-
-
-
-// mostrarResultado();
-
-// function mostrarResultado(){
-//     $('.resultados').html('<canvas id="grafico2"></canvas>');
-//     $.ajax({
-//         type: 'POST',
-//         url: '../procesos/grafico/datos.php',
-//         dataType: 'JSON',
-//         success:function(response){
-//             console.log(response);
-            
-//             var contexto = document.getElementById('grafico2').getContext('2d');
-//             window.Barra = new Chart(contexto).Line(Datos, { responsive : true });
-//             Barra.clear();
-
-
-
-//         }
-
-        
-//     });
-//     return false;
-// }

@@ -21,7 +21,8 @@
         t_persona as persona on usuarios.id_persona = persona.id_persona";
     $respuesta = mysqli_query($conexion, $sql); 
 ?>
-<table class="table table-sm dt-responsive nowrap" id="usuariosDataTable">
+
+<table class="table table-sm dt-responsive nowrap" id="robosDataTable">
     <thead>
         <th>Nombre</th>
         <th>Apellido Paterno</th>
@@ -46,25 +47,7 @@
             <td><?php echo $mostrar['nombreUsuario'];?></td>
             <td><?php echo $mostrar['ubicacion'];?></td>
             <td><?php echo $mostrar['rol'];?></td>
-            <td>
-                <button class="btn btn-success">
-                    Cambiar Password
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-warning" 
-                        data-toggle="modal" 
-                        data-target="#modalActualizarUsuarios" 
-                        onclick="obtenerDatosUsuario(<?php echo $mostrar['idUsuario']?>)">
-                    Editar
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-danger" 
-                onclick="eliminarUsuario(<?php echo $mostrar['idUsuario'] ?>)">
-                    Eliminar     
-                </button>
-            </td>
+        
             <?php
                 }
             ?>

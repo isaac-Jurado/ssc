@@ -7,9 +7,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
-      <table class="table">
-      <div id="tablaRobosDashboard"> </div>
+
+        <div id="tablaRobosDashboard">  </div>
 
 </div>
 <div class="modal-footer">
@@ -19,4 +18,7 @@
     </div>
   </div>
 </div>
-         
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../../public/js/cliente/dashboard.js"></script>

@@ -3,7 +3,9 @@
 <?php 
  include "Conexion.php";
 
+ 
     class Grafica extends Conexion {
+		
         public function build_report_delitos1(){
 	    	$total = array();
 			$delito =  rand(1,7);
