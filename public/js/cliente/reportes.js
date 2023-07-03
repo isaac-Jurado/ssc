@@ -52,14 +52,9 @@ function crearSelectAlgo(){
     $.ajax({
         url: "../procesos/usuarios/AccionCrud/select.php",
         success:function(respuesta){
-          
              //ESTE SELECT ES QUE APARECE Y ES EL QUE NOS MOSTRARA LA PARTE DE LOS DELITOS 
             $('#listadoDelito').html(respuesta);
         }
-    });
-   
-
-   
-
+    }); 
 }
 

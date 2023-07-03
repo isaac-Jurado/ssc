@@ -1,6 +1,7 @@
-mostrarResultados(2023);
 
-function mostrarResultados(year){
+mostraResultado(2023);
+
+function mostraResultado(year){
     $('.resultados').html('<canvas id="tecomitl"></canvas>');
     $.ajax({
         type: 'POST',

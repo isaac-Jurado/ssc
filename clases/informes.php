@@ -1,7 +1,7 @@
 <?php 
- include "Conexion.php";
+	include "Conexion.php";
 
-    class Grafica extends Conexion {
+    class graficas extends Conexion {
         public function build_report($year){
 	    	$total = array();
 	    	for($i=0; $i<12; $i++){
