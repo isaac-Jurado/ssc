@@ -30,7 +30,6 @@
         <th>Usuario</th>
         <th>Ubicacion</th>
         <th>Rol</th>
-        <th>Reset Password</th>
         <th>Editar</th>
         <th>Eliminar</th>
     </thead>
@@ -39,18 +38,13 @@
                 while($mostrar = mysqli_fetch_array($respuesta)){
             ?>
         <tr>
+            <td><?php echo $mostrar['nombrePersona'];?></td>
             <td><?php echo $mostrar['paterno'];?></td>
             <td><?php echo $mostrar['materno'];?></td>
-            <td><?php echo $mostrar['nombrePersona'];?></td>
             <td><?php echo $mostrar['telefono'];?></td>
             <td><?php echo $mostrar['nombreUsuario'];?></td>
             <td><?php echo $mostrar['ubicacion'];?></td>
             <td><?php echo $mostrar['rol'];?></td>
-            <td>
-                <button class="btn btn-success">
-                    Cambiar Password
-                </button>
-            </td>
             <td>
                 <button class="btn btn-warning" 
                         data-toggle="modal" 
