@@ -1,52 +1,36 @@
 <?php
     include '../../clases/Conexion.php';
     $con = new Conexion();
+    $año = date('Y');
     $conexion = $con->conectar();
-    $sql = "SELECT
-            usuarios.id_usuario as idUsuario,
-            usuarios.usuario as nombreUsuario,
-            roles.nombre as rol,
-            usuarios.id_rol as idRol,
-            usuarios.id_persona as idPersona,
-            persona.nombre as nombrePersona,
-            persona.paterno as paterno,
-            persona.materno as materno,
-            persona.telefono as telefono,
-            usuarios.ubicacion as ubicacion
-        FROM
-        t_usuarios as usuarios
-            INNER JOIN
-        t_cat_roles as roles on usuarios.id_rol = roles.id_rol
-            INNER JOIN
-        t_persona as persona on usuarios.id_persona = persona.id_persona";
+    $sql = "SELECT 
+                COUNT(id_delito) AS total,
+                poblado as pueblito
+    
+                FROM
+                t_reportes as reportes 
+                    INNER JOIN 
+                t_cat_poblado as p 
+                    on reportes.id_poblado=p.id_poblado
+            WHERE id_delito=7 AND YEAR(fecha) = $año
+            GROUP BY poblado ";
     $respuesta = mysqli_query($conexion, $sql); 
 ?>
 
 <table class="table table-sm dt-responsive nowrap" id="robosDataTable">
     <thead>
-        <th>Nombre</th>
-        <th>Apellido Paterno</th>
-        <th>Apellido Materno</th>
-        <th>telefono</th>
-        <th>Usuario</th>
-        <th>Ubicacion</th>
-        <th>Rol</th>
-        <th>Reset Password</th>
-        <th>Editar</th>
-        <th>Eliminar</th>
+        <th>Poblado</th>
+        <th>hora</th>
+        <th>numero de delitos</th>
     </thead>
     <tbody>
             <?php 
                 while($mostrar = mysqli_fetch_array($respuesta)){
             ?>
         <tr>
-            <td><?php echo $mostrar['paterno'];?></td>
-            <td><?php echo $mostrar['materno'];?></td>
-            <td><?php echo $mostrar['nombrePersona'];?></td>
-            <td><?php echo $mostrar['telefono'];?></td>
-            <td><?php echo $mostrar['nombreUsuario'];?></td>
-            <td><?php echo $mostrar['ubicacion'];?></td>
-            <td><?php echo $mostrar['rol'];?></td>
+            <td><?php echo $mostrar['pueblito'];?></td>
+            <td>1</td>
+            <td><?php echo $mostrar['total'];?></td>
         
             <?php
                 }
@@ -56,9 +40,3 @@
 </table>
 
 
-<script>
-    $(document).ready(function(){
-        //!con esta linea ponemos en funcionamieno el datatable 
-        $('#robosDataTable').dataTable()
-    })
-</script>

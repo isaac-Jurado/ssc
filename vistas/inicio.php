@@ -22,17 +22,25 @@
 
 <div class="container mt-2">
     <div class="row">
-        <div class="col-xl-3 col-md-6">
+        <!-- <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">Robos a transeunte</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <button class="btn btn-outline-warning" data-toggle="modal" data-target="#modalRobosinfo">
+                        <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             View Details
                         </button>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
             </div>
 
+        </div> -->
+        <div class="col">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+                <div id="tablacollapse"></div>
+            </div>
+            </div>
         </div>
         <div class="col-xl-3 col-md-6">
         <div class="card bg-warning text-white mb-4">
@@ -115,7 +123,7 @@
     include "dashboard/robos.php";
     include "footer.php"; 
 ?>
-
+<script src="../public/js/cliente/collapse.js"></script>
 <script src="../public/js/cliente/grafico.js"></script>
 
 <?php
