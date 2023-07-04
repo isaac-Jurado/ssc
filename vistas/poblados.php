@@ -32,7 +32,7 @@
     <div class="row">
         <!-- //! tecomitl -->
         <div class="col-xl-4">
-            <div class="card mb-4">
+            <div class="card mb-4" style="background-color: #E9137052">
                 <div class="card-header">
                     <i class="fas fa-chart-area me-1"></i>
                     Tecomitl
@@ -58,6 +58,38 @@
                     San Francisco
                 </div>
                 <div class="card-body" style="width: 95%; height:100%;"><canvas id="francisco" width="100%" height="40" ></canvas></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- //!san agustin otenco -->
+        <div class="col-xl-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    San Agustin Ohtenco
+                </div>
+                <div class="card-body" style="width: 95%; height:100%;"><canvas id="agustin" width="100%" height="40" ></canvas></div>
+            </div>
+        </div>
+        <!-- //! san juan tepenahuac  -->
+        <div class="col-xl-4">
+            <div class="card mb-4" ">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    San Juan Tepenahuac
+                </div>
+                <div class="card-body" style="width: 95%; height:100%;"><canvas id="tepenahuac" width="100%" height="40" ></canvas></div>
+            </div>
+        </div>
+        <!-- //!santa ana -->
+        <div class="col-xl-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    San Francisco
+                </div>
+                <div class="card-body" style="width: 95%; height:100%;"><canvas id="tlacotenco" width="100%" height="40" ></canvas></div>
             </div>
         </div>
     </div>
