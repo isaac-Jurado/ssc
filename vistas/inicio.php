@@ -42,36 +42,33 @@
             </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6">
-        <div class="card bg-warning text-white mb-4">
-            <div class="card-body">feminisidio</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
+        <div class="col">
+            <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body">
+                <div id="tablacollapse2"></div>
+            </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
-                <div class="card-body">Robo a transeunte</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
+        <div class="col">
+            <a class="btn btn-success" data-bs-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <div class="collapse multi-collapse" id="multiCollapseExample3">
+            <div class="card card-body">
+                <div id="tablacollapse3"></div>
+            </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="card bg-danger text-white mb-4">
-                <div class="card-body">Abuso Sexual</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
+        <div class="col">
+            <a class="btn btn-warning" data-bs-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <div class="collapse multi-collapse" id="multiCollapseExample4">
+            <div class="card card-body">
+                <div id="tablacollapse4"></div>
+            </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
 			<div class="col-xl-6">
 				<div class="card mb-4">
 					<div class="card-header">
@@ -98,7 +95,7 @@
 
                     <h3>Relacion de agresores por sexo</h3>
                     <div>
-                        <canvas id="agresor" />
+                        <canvas id="agresor" >
                     </div>
                 </div>
             </div>
@@ -107,7 +104,7 @@
 
                     <h3>Relacion de victimas por sexo</h3>
                     <div>
-                        <canvas id="victima" />
+                        <canvas id="victima" >
                     </div>
                 </div>
             </div>
@@ -120,7 +117,6 @@
 
 
 <?php 
-    include "dashboard/robos.php";
     include "footer.php"; 
 ?>
 <script src="../public/js/cliente/collapse.js"></script>
