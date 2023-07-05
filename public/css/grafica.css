@@ -14,3 +14,39 @@
     margin-top: 40px;
     
 }
+.but{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 3px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.but::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(115deg,#09df3e,#ffd016,#6085b8,#44ce7b);
+    background-size: 50% 100%;
+    border-radius: inherit;
+}
+.but:hover::before{
+    animation: animate .75s linear infinite;
+}
+.but span{
+    position: relative;
+    z-index: 2;
+    display: block;
+    background-color: #111;
+    padding: 13px 20px;
+    border-radius: 3px;
+}
+@keyframes animate{
+    to{
+        transform: translate(-50%);
+    }
+}

@@ -20,7 +20,6 @@
 <table class="table table-sm dt-responsive nowrap" id="robosDataTable">
     <thead>
         <th>Poblado</th>
-        <th>hora</th>
         <th>numero de delitos</th>
     </thead>
     <tbody>
@@ -29,7 +28,6 @@
             ?>
         <tr>
             <td><?php echo $mostrar['pueblito'];?></td>
-            <td>1</td>
             <td><?php echo $mostrar['total'];?></td>
         
             <?php
