@@ -29,8 +29,8 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 ) {
     <?php } else if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 2){ ?>
         <div class="container">
         <h1 class="mt-4">Administrar reportes</h1>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarReportes">
-            Agregar reporte
+        <button class="btn btn-primary but" data-toggle="modal" data-target="#modalAgregarReportes">
+            <span>Agregar reporte</span> 
         </button>
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarDelito">
             Agregar Delito

@@ -35,7 +35,9 @@
 
         </div> -->
         <div class="col">
-            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <a class="btn btn-primary but" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                <span> Robo a Transeunte</span>
+            </a>
             <div class="collapse multi-collapse" id="multiCollapseExample1">
             <div class="card card-body">
                 <div id="tablacollapse"></div>

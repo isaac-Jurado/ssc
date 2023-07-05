@@ -15,7 +15,7 @@
                         <select onChange="mostraResultado(this.value);">
                             <?php
                                 $añoActual = date('Y');
-                                for($i=1900;$i<=$añoActual;$i++){
+                                for($i=2020;$i<=$añoActual;$i++){
                                     if($i == $añoActual){
                                         echo '<option value="'.$i.'" selected>'.$i.'</option>';
                                     }else{
