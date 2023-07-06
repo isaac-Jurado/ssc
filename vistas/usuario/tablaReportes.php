@@ -88,5 +88,9 @@ FROM
 <script>
 $(document).ready(function(){
     $('#tablaReportesDataTable').DataTable();
+//Codigo para los botones de los reportes de excel y de pdf
+    dom: 'Bfrtip',
+    buttons: ['copy', 'csv', 'excel', 'pdf']
+
 });
 </script>
