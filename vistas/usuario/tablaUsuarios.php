@@ -69,6 +69,9 @@
 <script>
     $(document).ready(function(){
         //!con esta linea ponemos en funcionamieno el datatable 
-        $('#usuariosDataTable').dataTable()
-    })
+        $('#usuariosDataTable').dataTable({
+            dom: 'Bfrtip',
+            buttons: ['copy', 'csv', 'excel', 'pdf']
+        });
+    });
 </script>

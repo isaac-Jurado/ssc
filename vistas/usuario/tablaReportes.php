@@ -34,8 +34,7 @@ FROM
     t_cat_sexo_victima AS sexoV ON reporte.id_sexo_victima = sexoV.id_sexo_victima";
     $respuesta = mysqli_query($conexion, $sql);
 ?>
-<table class="table table-sm table-dark dt-responsive nowrap" style="width:100%" 
-        id="tablaReportesDataTable">
+<table class="table table-sm dt-responsive nowrap" id="tablaReportesDataTable">
     <thead>  
         <th>Id</th>
         <th>Fecha</th>
@@ -87,10 +86,10 @@ FROM
 <!-- aca va los botones -->
 <script>
 $(document).ready(function(){
-    $('#tablaReportesDataTable').DataTable({
-        dom: 'Bfrtip',
-        buttons: ['copy', 'csv', 'excel', 'pdf']
-
+    $('#tablaReportesDataTable').dataTable({
+            dom: 'Bfrtip',
+            buttons: ['copy', 'csv', 'excel', 'pdf']
+        });
     });
-});
+
 </script>
