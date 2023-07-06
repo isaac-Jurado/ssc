@@ -10,7 +10,7 @@
     <script src="../public/chartJS/Chart.min.js"></script>
 
     <!--Seccion de botones del data table para pdf, excel etc -->
-    <script src="../public/datatable/buttons.dataTables.min.js"></script>
+    <script src="../public/datatable/dataTables.buttons.min.js"></script>
     <script src="../public/datatable/jszip.min.js"></script>
     <script src="../public/datatable/pdfmake.min.js"></script>
     <script src="../public/datatable/vfs_fonts.js"></script>

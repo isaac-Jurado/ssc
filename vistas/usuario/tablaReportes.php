@@ -84,13 +84,13 @@ FROM
         <?php } ?>
     </tbody>
 </table>
-
+<!-- aca va los botones -->
 <script>
 $(document).ready(function(){
-    $('#tablaReportesDataTable').DataTable();
-//Codigo para los botones de los reportes de excel y de pdf
-    dom: 'Bfrtip',
-    buttons: ['copy', 'csv', 'excel', 'pdf']
+    $('#tablaReportesDataTable').DataTable({
+        dom: 'Bfrtip',
+        buttons: ['copy', 'csv', 'excel', 'pdf']
 
+    });
 });
 </script>
