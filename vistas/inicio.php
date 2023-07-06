@@ -35,7 +35,7 @@
 
         </div> -->
         <div class="col">
-            <a class="btn btn-primary but" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
                 <span> Robo a Transeunte</span>
             </a>
             <div class="collapse multi-collapse" id="multiCollapseExample1">
@@ -45,7 +45,9 @@
             </div>
         </div>
         <div class="col">
-            <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                <span>Abuso Sexual </span>
+            </a>
             <div class="collapse multi-collapse" id="multiCollapseExample2">
             <div class="card card-body">
                 <div id="tablacollapse2"></div>
@@ -53,7 +55,9 @@
             </div>
         </div>
         <div class="col">
-            <a class="btn btn-success" data-bs-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <a class="btn btn-success" data-bs-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                Violacion
+            </a>
             <div class="collapse multi-collapse" id="multiCollapseExample3">
             <div class="card card-body">
                 <div id="tablacollapse3"></div>
@@ -61,10 +65,10 @@
             </div>
         </div>
         <div class="col">
-            <a class="btn btn-warning" data-bs-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <a class="btn btn-warning" data-bs-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Violencia Genero</a>
             <div class="collapse multi-collapse" id="multiCollapseExample4">
             <div class="card card-body">
-                <div id="tablacollapse4"></div>
+                <div id="tablacollapse1"></div>
             </div>
             </div>
         </div>
@@ -86,7 +90,7 @@
 						<i class="fas fa-chart-bar me-1"></i>
 						Robo a Transeunte
 					</div>
-					<div class="card-body" style="width: 95%; height:100%;"><canvas id="grafico2" width="100%" height="40" ></canvas></div>
+					<div class="card-body" style="width: 95%; height:100%;"><canvas id="grafico2" width="100%" height="50" ></canvas></div>
 				</div>
 			</div>
 		</div>

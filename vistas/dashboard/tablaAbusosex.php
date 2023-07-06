@@ -12,7 +12,7 @@
                     INNER JOIN 
                 t_cat_poblado as p 
                     on reportes.id_poblado=p.id_poblado
-            WHERE id_delito=7 AND YEAR(fecha) = $año
+            WHERE id_delito=1 AND YEAR(fecha) = $año
             GROUP BY poblado ";
     $respuesta = mysqli_query($conexion, $sql); 
 ?>
