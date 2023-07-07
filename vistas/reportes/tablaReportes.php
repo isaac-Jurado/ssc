@@ -87,6 +87,10 @@ FROM
 
 <script>
 $(document).ready(function(){
-    $('#tablaReportesDataTable').DataTable();
-});
+    $('#tablaReportesDataTable').dataTable({
+            dom: 'Bfrtip',
+            buttons: ['copy', 'csv', 'excel', 'pdf']
+        });
+    });
+
 </script>
