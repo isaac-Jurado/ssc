@@ -34,13 +34,12 @@ FROM
     t_cat_sexo_victima AS sexoV ON reporte.id_sexo_victima = sexoV.id_sexo_victima";
     $respuesta = mysqli_query($conexion, $sql);
 ?>
-<table class="table table-sm table-dark dt-responsive nowrap" style="width:100%" 
+<table class="table table-sm table-dark table-striped responsive dt-responsive nowrap" style="width:100%" 
         id="tablaReportesDataTable">
     <thead>  
         <th>Id</th>
         <th>Fecha</th>
         <th>Hora</th>
-        <th>Observaciones</th>
         <th>Delito</th>
         <th>Lugar</th>
         <th>Pueblo</th>
@@ -48,8 +47,7 @@ FROM
         <th>TransporteVict</th>
         <th>SexoAgre</th>
         <th>SexoVict</th>
-        <th>Editar</th>
-        <th>Editar</th>
+        <th>Observaciones</th>
     </thead>
     <tbody>
         <?php 
@@ -59,7 +57,6 @@ FROM
                 <td><?php echo $mostrar['idReporte'];?></td>
                 <td><?php echo $mostrar['fecha'];?></td>
                 <td><?php echo $mostrar['hora'];?></td>
-                <td><?php echo $mostrar['observaciones'];?></td>
                 <td><?php echo $mostrar['nombreDelito'];?></td>
                 <td><?php echo $mostrar['lugarReporte'];?></td>
                 <td><?php echo $mostrar['pueblo'];?></td>
@@ -67,19 +64,7 @@ FROM
                 <td><?php echo $mostrar['transporteVi'];?></td>
                 <td><?php echo $mostrar['sexoAgr'];?></td>
                 <td><?php echo $mostrar['sexoVi'];?></td>
-            <td>
-                <button class="btn btn-warning btn-sm"  
-                        data-toggle="modal" 
-                        data-target="#modalActualizarReporte"
-                        onclick="obtenerDatosUsuario(<?php echo $mostrar['idReporte'] ?>)">
-                            Editar 
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-danger btn-sm">
-                    Eliminar
-                </button>
-            </td>
+                <td><?php echo $mostrar['observaciones'];?></td>
         </tr>
         <?php } ?>
     </tbody>
@@ -88,6 +73,7 @@ FROM
 <script>
 $(document).ready(function(){
     $('#tablaReportesDataTable').dataTable({
+        responsive: true,
             dom: 'Bfrtip',
             buttons: ['copy', 'csv', 'excel', 'pdf']
         });
