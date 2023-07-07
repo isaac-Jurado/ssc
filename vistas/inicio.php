@@ -10,7 +10,7 @@
 
 <div class="container">
         <div class="row">
-           <div class="col">
+            <div class="col">
                 <h1>
                     Crimenes
                 </h1>
@@ -68,7 +68,7 @@
             <a class="btn btn-warning" data-bs-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Violencia Genero</a>
             <div class="collapse multi-collapse" id="multiCollapseExample4">
             <div class="card card-body">
-                <div id="tablacollapse1"></div>
+                <div id="tablacollapse4"></div>
             </div>
             </div>
         </div>
