@@ -50,3 +50,14 @@
         transform: translate(-50%);
     }
 }
+.tdatatable tbody{
+    height: 60px;
+    overflow-y: auto;
+    width: 100%;
+}
+.tdatatable thead,
+.tdatatable tbody,
+.tdatatable td,
+.tdatatable th{
+    display:inline-block
+}

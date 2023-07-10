@@ -17,7 +17,7 @@
     $respuesta = mysqli_query($conexion, $sql); 
 ?>
 
-<table class="table table-sm dt-responsive nowrap table-dark" id="robosDataTable">
+<table class="table table-sm dt-responsive nowrap table-dark tdatatable" id="robosDataTable">
     <thead>
         <th>Poblado</th>
         <th>N Delitos</th>
