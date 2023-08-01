@@ -7,9 +7,11 @@
 ?>
     <!-- Page Content -->
     <div class="container mt-4">
-        <h1 class="mt-4">Usuarios </h1>
+        <h1 class="mt-4">
+            <span class="fas fa-user"></span>Usuarios </h1>
         <p>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuarios">Agregar</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuarios">
+                <i class="fas fa-user-plus"></i> Agregar</button>
             <hr>
             <div id="tablaUsuarios"> </div>
         </p>

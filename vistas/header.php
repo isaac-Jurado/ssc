@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../public/datatable/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../public/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../public/fontawesome/css/all.css"> 
     <link rel="stylesheet" href="../public/datatable/responsive.bootstrap4.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/datatable/buttons.dataTables.min.css">
@@ -33,32 +34,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="inicio.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="inicio.php">
+                <i class="fas fa-home"></i> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reportes.php">reportes</a>
+                <a class="nav-link" href="reportes.php">
+                    <i class="fas fa-file-alt"></i> Reportes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="poblados.php">informe </a>
+                <a class="nav-link" href="poblados.php">
+                    <i class="fas fa-chart-line"></i> Informe </a>
             </li>
             <!-- //!apartir de aca solo iran las vistas del usuario comun -->
             <?php if ($_SESSION['usuario']['rol']==1) { ?>
             <li class="nav-item">
-                <a class="nav-link" href="pru.php">prueva</a>
+                <a class="nav-link" href="pru.php">Prueva</a>
             </li>
             <?php } elseif ($_SESSION['usuario']['rol']==2) {
             ?>
             <!-- //!apartir de aca solo iran las vistas unicas del administrador -->
             <li class="nav-item">
-                <a class="nav-link" href="usuarios.php">usuarios</a>
+                <a class="nav-link" href="usuarios.php">
+                    <i class="fas fa-users"></i> Usuarios</a>
             </li>
             <?php
                 }
             ?>
             <li class="nav-item">
-            <a class="nav-link" href="../procesos/usuarios/login/salir.php">Salir</a>
+            <a class="nav-link" href="../procesos/usuarios/login/salir.php">
+            <i class="fas fa-sign-out-alt"></i> Salir</a>
             </li>   
-             
             </ul>
         </div>
     </div>

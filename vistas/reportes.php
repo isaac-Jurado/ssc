@@ -7,7 +7,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 ) {
     <!-- Page Content -->
     <div class="container">
         <h1 class="mt-4">Administrar reportes</h1>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarReportes">
+        <button class="btn btn-primary"  data-toggle="modal" data-target="#modalAgregarReportes">
             Agregar reporte
         </button>
 
@@ -30,10 +30,10 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 1 ) {
         <div class="container">
         <h1 class="mt-4">Administrar reportes</h1>
         <button class="btn btn-primary but" data-toggle="modal" data-target="#modalAgregarReportes">
-            <span>Agregar reporte</span> 
+            <span class="fas fa-user-plus"> Agregar reporte</span> 
         </button>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarDelito">
-            Agregar Delito
+        <button class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarDelito">
+            <i class="fas fa-plus"></i> Agregar Delito
         </button>
         <hr>
         <div id="tablaReportesLoad">

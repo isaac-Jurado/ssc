@@ -50,13 +50,13 @@
                         data-toggle="modal" 
                         data-target="#modalActualizarUsuarios" 
                         onclick="obtenerDatosUsuario(<?php echo $mostrar['idUsuario']?>)">
-                    Editar
+                        <span class="fas fa-user-edit"></span> Editar
                 </button>
             </td>
             <td>
                 <button class="btn btn-danger" 
                 onclick="eliminarUsuario(<?php echo $mostrar['idUsuario'] ?>)">
-                    Eliminar     
+                        <span class="fas fa-trash"></span> Eliminar     
                 </button>
             </td>
             <?php
